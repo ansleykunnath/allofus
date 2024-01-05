@@ -1,3 +1,4 @@
+#install.packages("tidyverse")
 #install.packages("rms")
 #install.packages("data.table")
 #install.packages("gtsummary")
@@ -586,42 +587,42 @@ baseline_data <- baseline_data %>%
 table(baseline_data$SeenAPP)
 
 # heart and blood conditions
-for(i in 1:30){
+for(i in 1:15){
     var <- paste0('Circulatory: Circulatory Conditions_', i)
     print(var)
     print(table(baseline_data[var]))
 }
 
 # cancer
-for(i in 1:18){
+for(i in 1:9){
     var <- paste0('Cancer: Cancer Conditions_', i)
     print(var)
     print(table(baseline_data[var]))
 }
 
 # respiratory conditions
-for(i in 1:8){
+for(i in 1:4){
     var <- paste0('Respiratory: Respiratory Conditions_', i)
     print(var)
     print(table(baseline_data[var]))
 }
 
 # endocrine conditions
-for(i in 1:14){
+for(i in 1:7){
     var <- paste0('Endocrine: Endocrine Conditions_', i)
     print(var)
     print(table(baseline_data[var]))
 }
 
 # other conditions
-for(i in 1:22){
+for(i in 1:11){
     var <- paste0('Other: Other Conditions_', i)
     print(var)
     print(table(baseline_data[var]))
 }
 
 # kidney conditions
-for(i in 1:10){
+for(i in 1:5){
     var <- paste0('Kidney: Kidney Conditions_', i)
     print(var)
     print(table(baseline_data[var]))
@@ -716,59 +717,12 @@ htn_df <- baseline_data %>% select(person_id, starts_with("Circulatory")) %>%
                              ifelse(is.na(`Circulatory: Circulatory Conditions_14`), NA, 0))),
           c15 = ifelse(`Circulatory: Circulatory Conditions_15` %in% vec_htn, 1,
                        ifelse(`Circulatory: Circulatory Conditions_15` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_15`), NA, 0))),
-          c16 = ifelse(`Circulatory: Circulatory Conditions_16` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_16` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_16`), NA, 0))),
-          c17 = ifelse(`Circulatory: Circulatory Conditions_17` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_17` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_17`), NA, 0))),
-          c18 = ifelse(`Circulatory: Circulatory Conditions_18` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_18` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_18`), NA, 0))),
-          c19 = ifelse(`Circulatory: Circulatory Conditions_19` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_19` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_19`), NA, 0))),
-          c20 = ifelse(`Circulatory: Circulatory Conditions_20` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_20` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_20`), NA, 0))),
-          c21 = ifelse(`Circulatory: Circulatory Conditions_21` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_21` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_21`), NA, 0))),
-          c22 = ifelse(`Circulatory: Circulatory Conditions_22` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_22` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_22`), NA, 0))),
-          c23 = ifelse(`Circulatory: Circulatory Conditions_23` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_23` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_23`), NA, 0))),
-          c24 = ifelse(`Circulatory: Circulatory Conditions_24` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_24` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_24`), NA, 0))),
-          c25 = ifelse(`Circulatory: Circulatory Conditions_25` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_25` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_25`), NA, 0))),
-          c26 = ifelse(`Circulatory: Circulatory Conditions_26` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_26` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_26`), NA, 0))),
-          c27 = ifelse(`Circulatory: Circulatory Conditions_27` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_27` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_27`), NA, 0))),
-          c28 = ifelse(`Circulatory: Circulatory Conditions_28` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_28` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_28`), NA, 0))),
-          c29 = ifelse(`Circulatory: Circulatory Conditions_29` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_29` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_29`), NA, 0))),
-          c30 = ifelse(`Circulatory: Circulatory Conditions_30` %in% vec_htn, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_30` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_30`), NA, 0)))) %>%
+                             ifelse(is.na(`Circulatory: Circulatory Conditions_15`), NA, 0)))) %>%
     rowwise() %>%
     mutate(htn = ifelse(is.nan(c1), NaN,
                                ifelse(is.na(c1), NA,
                                      sum(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, 
-                                         c11, c12, c13, c14, c15, c16, c17, c18, c19, 
-                                         c20, c21, c22, c23, c24, c25, c26, c27, c28, 
-                                         c29, c30, na.rm = TRUE))))
+                                         c11, c12, c13, c14, c15, na.rm = TRUE))))
 head(htn_df %>% select(person_id, starts_with("Circulatory"), htn), 20)
 # final dataframe for merging
 htn_final <- htn_df %>% select(person_id, htn) %>%
@@ -830,59 +784,12 @@ cad_df <- baseline_data %>% select(person_id, starts_with("Circulatory")) %>%
                              ifelse(is.na(`Circulatory: Circulatory Conditions_14`), NA, 0))),
           c15 = ifelse(`Circulatory: Circulatory Conditions_15` %in% vec_cad, 1,
                        ifelse(`Circulatory: Circulatory Conditions_15` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_15`), NA, 0))),
-          c16 = ifelse(`Circulatory: Circulatory Conditions_16` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_16` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_16`), NA, 0))),
-          c17 = ifelse(`Circulatory: Circulatory Conditions_17` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_17` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_17`), NA, 0))),
-          c18 = ifelse(`Circulatory: Circulatory Conditions_18` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_18` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_18`), NA, 0))),
-          c19 = ifelse(`Circulatory: Circulatory Conditions_19` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_19` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_19`), NA, 0))),
-          c20 = ifelse(`Circulatory: Circulatory Conditions_20` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_20` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_20`), NA, 0))),
-          c21 = ifelse(`Circulatory: Circulatory Conditions_21` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_21` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_21`), NA, 0))),
-          c22 = ifelse(`Circulatory: Circulatory Conditions_22` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_22` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_22`), NA, 0))),
-          c23 = ifelse(`Circulatory: Circulatory Conditions_23` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_23` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_23`), NA, 0))),
-          c24 = ifelse(`Circulatory: Circulatory Conditions_24` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_24` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_24`), NA, 0))),
-          c25 = ifelse(`Circulatory: Circulatory Conditions_25` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_25` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_25`), NA, 0))),
-          c26 = ifelse(`Circulatory: Circulatory Conditions_26` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_26` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_26`), NA, 0))),
-          c27 = ifelse(`Circulatory: Circulatory Conditions_27` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_27` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_27`), NA, 0))),
-          c28 = ifelse(`Circulatory: Circulatory Conditions_28` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_28` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_28`), NA, 0))),
-          c29 = ifelse(`Circulatory: Circulatory Conditions_29` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_29` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_29`), NA, 0))),
-          c30 = ifelse(`Circulatory: Circulatory Conditions_30` %in% vec_cad, 1,
-                       ifelse(`Circulatory: Circulatory Conditions_30` %in% skip, NaN, 
-                             ifelse(is.na(`Circulatory: Circulatory Conditions_30`), NA, 0)))) %>%
+                             ifelse(is.na(`Circulatory: Circulatory Conditions_15`), NA, 0)))) %>%
     rowwise() %>%
     mutate(cad = ifelse(is.nan(c1), NaN,
                                ifelse(is.na(c1), NA,
                                      sum(c1, c2, c3, c4, c5, c6, c7, c8, c9, 
-                                         c10, c11, c12, c13, c14, c15, c16, 
-                                         c17, c18, c19, c20, c21, c22, c23, c24, 
-                                         c25, c26, c27, c28, c29, c30, na.rm = TRUE))))
+                                         c10, c11, c12, c13, c14, c15, na.rm = TRUE))))
 head(cad_df %>% select(person_id, starts_with("Circulatory"), cad), 20)
 # final dataframe for merging
 cad_final <- cad_df %>% select(person_id, cad) %>%
@@ -926,40 +833,12 @@ any_cancer_df <- baseline_data %>% select(person_id, starts_with("Cancer")) %>%
                              ifelse(is.na(`Cancer: Cancer Conditions_8`), NA, 0))),
           c9 = ifelse(`Cancer: Cancer Conditions_9` %in% vec_any_cancer, 1,
                        ifelse(`Cancer: Cancer Conditions_9` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_9`), NA, 0))),
-          c10 = ifelse(`Cancer: Cancer Conditions_10` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_10` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_10`), NA, 0))),
-          c11 = ifelse(`Cancer: Cancer Conditions_11` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_11` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_11`), NA, 0))),
-          c12 = ifelse(`Cancer: Cancer Conditions_12` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_12` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_12`), NA, 0))),
-          c13 = ifelse(`Cancer: Cancer Conditions_13` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_13` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_13`), NA, 0))),
-          c14 = ifelse(`Cancer: Cancer Conditions_14` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_14` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_14`), NA, 0))),
-          c15 = ifelse(`Cancer: Cancer Conditions_15` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_15` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_15`), NA, 0))),
-          c16 = ifelse(`Cancer: Cancer Conditions_16` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_16` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_16`), NA, 0))),
-          c17 = ifelse(`Cancer: Cancer Conditions_17` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_17` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_17`), NA, 0))),
-          c18 = ifelse(`Cancer: Cancer Conditions_18` %in% vec_any_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_18` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_18`), NA, 0)))) %>%
+                             ifelse(is.na(`Cancer: Cancer Conditions_9`), NA, 0)))) %>%
     rowwise() %>%
     mutate(any_cancer = ifelse(is.nan(c1), NaN,
                                ifelse(is.na(c1), NA,
                                      sum(c1, c2, c3, c4, c5, c6, c7, c8, c9,
-                                         c10, c11, c12, c13, c14, c15, c16,
-                                         c17, c18, na.rm = TRUE))))
+                                         na.rm = TRUE))))
 head(any_cancer_df, 20)
 # final dataframe for merging
 any_cancer_final <- any_cancer_df %>% select(person_id, any_cancer) %>% 
@@ -1005,40 +884,12 @@ skin_cancer_df <- baseline_data %>% select(person_id, starts_with("Cancer")) %>%
                              ifelse(is.na(`Cancer: Cancer Conditions_8`), NA, 0))),
           s9 = ifelse(`Cancer: Cancer Conditions_9` %in% vec_skin_cancer, 1,
                        ifelse(`Cancer: Cancer Conditions_9` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_9`), NA, 0))),
-          s10 = ifelse(`Cancer: Cancer Conditions_10` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_10` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_10`), NA, 0))),
-          s11 = ifelse(`Cancer: Cancer Conditions_11` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_11` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_11`), NA, 0))),
-          s12 = ifelse(`Cancer: Cancer Conditions_12` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_12` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_12`), NA, 0))),
-          s13 = ifelse(`Cancer: Cancer Conditions_13` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_13` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_13`), NA, 0))),
-          s14 = ifelse(`Cancer: Cancer Conditions_14` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_14` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_14`), NA, 0))),
-          s15 = ifelse(`Cancer: Cancer Conditions_15` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_15` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_15`), NA, 0))),
-          s16 = ifelse(`Cancer: Cancer Conditions_16` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_16` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_16`), NA, 0))),
-          s17 = ifelse(`Cancer: Cancer Conditions_17` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_17` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_17`), NA, 0))),
-          s18 = ifelse(`Cancer: Cancer Conditions_18` %in% vec_skin_cancer, 1,
-                       ifelse(`Cancer: Cancer Conditions_18` %in% skip, NaN, 
-                             ifelse(is.na(`Cancer: Cancer Conditions_18`), NA, 0)))) %>%
+                             ifelse(is.na(`Cancer: Cancer Conditions_9`), NA, 0)))) %>%
     rowwise() %>%
     mutate(skin_cancer = ifelse(is.nan(s1), NaN,
                                ifelse(is.na(s1), NA,
                                      sum(s1, s2, s3, s4, s5, s6, s7, s8, s9,
-                                         s10, s11, s12, s13, s14, s15, s16,
-                                         s17, s18,na.rm = TRUE))))
+                                         na.rm = TRUE))))
 head(skin_cancer_df, 20)
 # final dataframe for merging
 skin_cancer_final <- skin_cancer_df %>% select(person_id, skin_cancer) %>%
@@ -1067,23 +918,11 @@ lung_df <- baseline_data %>% select(person_id, starts_with("Respiratory")) %>%
                              ifelse(is.na(`Respiratory: Respiratory Conditions_3`), NA, 0))),
           l4 = ifelse(`Respiratory: Respiratory Conditions_4` %in% vec_lung, 1,
                        ifelse(`Respiratory: Respiratory Conditions_4` %in% skip, NaN, 
-                             ifelse(is.na(`Respiratory: Respiratory Conditions_4`), NA, 0))),
-          l5 = ifelse(`Respiratory: Respiratory Conditions_5` %in% vec_lung, 1,
-                       ifelse(`Respiratory: Respiratory Conditions_5` %in% skip, NaN, 
-                             ifelse(is.na(`Respiratory: Respiratory Conditions_5`), NA, 0))),
-          l6 = ifelse(`Respiratory: Respiratory Conditions_6` %in% vec_lung, 1,
-                       ifelse(`Respiratory: Respiratory Conditions_6` %in% skip, NaN, 
-                             ifelse(is.na(`Respiratory: Respiratory Conditions_6`), NA, 0))),
-          l7 = ifelse(`Respiratory: Respiratory Conditions_7` %in% vec_lung, 1,
-                       ifelse(`Respiratory: Respiratory Conditions_7` %in% skip, NaN, 
-                             ifelse(is.na(`Respiratory: Respiratory Conditions_7`), NA, 0))),
-          l8 = ifelse(`Respiratory: Respiratory Conditions_8` %in% vec_lung, 1,
-                       ifelse(`Respiratory: Respiratory Conditions_8` %in% skip, NaN, 
-                             ifelse(is.na(`Respiratory: Respiratory Conditions_8`), NA, 0)))) %>%
+                             ifelse(is.na(`Respiratory: Respiratory Conditions_4`), NA, 0)))) %>%
     rowwise() %>%
     mutate(lung = ifelse(is.nan(l1), NaN,
                                ifelse(is.na(l1), NA,
-                                     sum(l1, l2, l3, l4, l5, l6, l7, l8, na.rm = TRUE))))
+                                     sum(l1, l2, l3, l4, na.rm = TRUE))))
 head(lung_df, 20)
 # final dataframe for merging
 lung_final <- lung_df %>% select(person_id, lung) %>% 
@@ -1122,33 +961,11 @@ diab_df <- baseline_data %>% select(person_id, starts_with("Endocrine")) %>%
                              ifelse(is.na(`Endocrine: Endocrine Conditions_6`), NA, 0))),
           e7 = ifelse(`Endocrine: Endocrine Conditions_7` %in% vec_diabetes, 1,
                        ifelse(`Endocrine: Endocrine Conditions_7` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_7`), NA, 0))),
-          e8 = ifelse(`Endocrine: Endocrine Conditions_8` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_8` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_8`), NA, 0))),
-          e9 = ifelse(`Endocrine: Endocrine Conditions_9` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_9` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_9`), NA, 0))),
-          e10 = ifelse(`Endocrine: Endocrine Conditions_10` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_10` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_10`), NA, 0))),
-          e11 = ifelse(`Endocrine: Endocrine Conditions_11` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_11` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_11`), NA, 0))),
-          e12 = ifelse(`Endocrine: Endocrine Conditions_12` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_12` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_12`), NA, 0))),
-          e13 = ifelse(`Endocrine: Endocrine Conditions_13` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_13` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_13`), NA, 0))),
-          e14 = ifelse(`Endocrine: Endocrine Conditions_14` %in% vec_diabetes, 1,
-                       ifelse(`Endocrine: Endocrine Conditions_14` %in% skip, NaN, 
-                             ifelse(is.na(`Endocrine: Endocrine Conditions_14`), NA, 0)))) %>%
+                             ifelse(is.na(`Endocrine: Endocrine Conditions_7`), NA, 0)))) %>%
     rowwise() %>%
     mutate(diab = ifelse(is.nan(e1), NaN,
                                ifelse(is.na(e1), NA,
-                                     sum(e1, e2, e3, e4, e5, e6, e7,
-                                         e8, e9, e10, e11, e12, e13, e14,na.rm = TRUE))))
+                                     sum(e1, e2, e3, e4, e5, e6, e7, na.rm = TRUE))))
 head(diab_df, 20)
 # final dataframe for merging
 diab_final <- diab_df %>% select(person_id, diab) %>% 
@@ -1200,46 +1017,12 @@ obesity_df <- baseline_data %>% select(person_id, starts_with("Other")) %>%
                              ifelse(is.na(`Other: Other Conditions_10`), NA, 0))),
           o11 = ifelse(`Other: Other Conditions_11` %in% vec_obesity, 1,
                        ifelse(`Other: Other Conditions_11` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_11`), NA, 0))),
-          o12 = ifelse(`Other: Other Conditions_12` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_12` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_12`), NA, 0))),
-          o13 = ifelse(`Other: Other Conditions_13` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_13` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_13`), NA, 0))),
-          o14 = ifelse(`Other: Other Conditions_14` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_14` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_14`), NA, 0))),
-          o15 = ifelse(`Other: Other Conditions_15` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_15` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_15`), NA, 0))),
-          o16 = ifelse(`Other: Other Conditions_16` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_16` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_16`), NA, 0))),
-          o17 = ifelse(`Other: Other Conditions_17` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_17` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_17`), NA, 0))),
-          o18 = ifelse(`Other: Other Conditions_18` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_18` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_18`), NA, 0))),
-          o19 = ifelse(`Other: Other Conditions_19` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_19` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_19`), NA, 0))),
-          o20 = ifelse(`Other: Other Conditions_20` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_20` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_20`), NA, 0))),
-          o21 = ifelse(`Other: Other Conditions_21` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_21` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_21`), NA, 0))),
-          o22 = ifelse(`Other: Other Conditions_22` %in% vec_obesity, 1,
-                       ifelse(`Other: Other Conditions_22` %in% skip, NaN, 
-                             ifelse(is.na(`Other: Other Conditions_22`), NA, 0)))) %>%
+                             ifelse(is.na(`Other: Other Conditions_11`), NA, 0)))) %>%
     rowwise() %>%
     mutate(obesity = ifelse(is.nan(o1), NaN,
                                ifelse(is.na(o1), NA,
                                      sum(o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11,
-                                         o12, o13, o14, o15, o16, o17, o18, o19,
-                                         o20, o21, o22, na.rm = TRUE))))
+                                         na.rm = TRUE))))
 head(obesity_df, 20)
 # final dataframe for merging
 obesity_final <- obesity_df %>% select(person_id, obesity) %>% 
@@ -1271,27 +1054,11 @@ ckd_df <- baseline_data %>% select(person_id, starts_with("Kidney")) %>%
                              ifelse(is.na(`Kidney: Kidney Conditions_4`), NA, 0))),
           k5 = ifelse(`Kidney: Kidney Conditions_5` %in% vec_ckd, 1,
                        ifelse(`Kidney: Kidney Conditions_5` %in% skip, NaN, 
-                             ifelse(is.na(`Kidney: Kidney Conditions_5`), NA, 0))),
-          k6 = ifelse(`Kidney: Kidney Conditions_6` %in% vec_ckd, 1,
-                       ifelse(`Kidney: Kidney Conditions_6` %in% skip, NaN, 
-                             ifelse(is.na(`Kidney: Kidney Conditions_6`), NA, 0))),
-          k7 = ifelse(`Kidney: Kidney Conditions_7` %in% vec_ckd, 1,
-                       ifelse(`Kidney: Kidney Conditions_7` %in% skip, NaN, 
-                             ifelse(is.na(`Kidney: Kidney Conditions_7`), NA, 0))),
-          k8 = ifelse(`Kidney: Kidney Conditions_8` %in% vec_ckd, 1,
-                       ifelse(`Kidney: Kidney Conditions_8` %in% skip, NaN, 
-                             ifelse(is.na(`Kidney: Kidney Conditions_8`), NA, 0))),
-          k9 = ifelse(`Kidney: Kidney Conditions_9` %in% vec_ckd, 1,
-                       ifelse(`Kidney: Kidney Conditions_9` %in% skip, NaN, 
-                             ifelse(is.na(`Kidney: Kidney Conditions_9`), NA, 0))),
-          k10 = ifelse(`Kidney: Kidney Conditions_10` %in% vec_ckd, 1,
-                       ifelse(`Kidney: Kidney Conditions_10` %in% skip, NaN, 
-                             ifelse(is.na(`Kidney: Kidney Conditions_10`), NA, 0)))) %>%
+                             ifelse(is.na(`Kidney: Kidney Conditions_5`), NA, 0)))) %>%
     rowwise() %>%
     mutate(ckd = ifelse(is.nan(k1), NaN,
                                ifelse(is.na(k1), NA,
-                                     sum(k1, k2, k3, k4, k5,
-                                         k6, k7, k8, k9, k10,na.rm = TRUE))))
+                                     sum(k1, k2, k3, k4, k5, na.rm = TRUE))))
 head(ckd_df, 20)
 # final dataframe for merging
 ckd_final <- ckd_df %>% select(person_id, ckd) %>% 
@@ -1742,31 +1509,31 @@ tab1_fin <- tab1_original %>%
 # add unknown rows after clinical things to tab1_wt
 tab1_wt_fin <- tab1_wt %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 111) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 116) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 121) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 126) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 131) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 136) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 141) %>%
     add_row(`**Characteristic**` = "Unknown",
-           `**N = 378,825**` = "0",
+           `**N = 378,811**` = "0",
            .before = 146)
 tab1_fin <- tab1_fin %>%
-    add_column(`**N = 378,825**` = tab1_wt_fin$`**N = 378,825**`)
+    add_column(`**N = 378,811**` = tab1_wt_fin$`**N = 378,811**`)
 tab1_fin
 
 # export
@@ -1829,10 +1596,10 @@ regTermTest(htn_mod_wt, ~ SeenPCP,
 htn_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                htn_LR_s = c(5490.345, 9.8342, 5.235704, 12.537,
-                             17.98816, 0.4195928, 9.828441, 
-                             323.1424, 128.245, 38.62211, 2869.303),
-                htn_LR = 11862.6) %>%
+                htn_LR_s = c(5486.893, 8.066833, 5.605528, 13.08752, 24.54173, 
+                             0.5263086, 12.75225, 318.0993, 126.889, 47.3447, 
+                             175.376),
+                htn_LR = 6979.779) %>%
     mutate(htn_A = htn_LR_s / htn_LR) %>%
     arrange(-htn_A) %>%
     rowid_to_column("htn_rank")
@@ -1894,10 +1661,10 @@ regTermTest(cad_mod_wt, ~ SeenPCP,
 cad_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                cad_LR_s = c(1238.568, 12.98387, 4.605069, 10.71794,
-                             28.0299, 0.4391817, 17.86887, 
-                             49.62517, 21.14111, 62.62619, 935.4918),
-                cad_LR = 4240.078) %>%
+                cad_LR_s = c(1243.152, 13.77759, 4.487376, 4.891905, 25.97158, 
+                             0.8800346, 16.24715, 47.02051, 20.21686, 57.35256, 
+                             9.057388),
+                cad_LR = 3235.647) %>%
     mutate(cad_A = cad_LR_s / cad_LR) %>%
     arrange(-cad_A) %>%
     rowid_to_column("cad_rank")
@@ -1959,10 +1726,10 @@ regTermTest(cancer_mod_wt, ~ SeenPCP,
 cancer_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                cancer_LR_s = c(6051.413, 9.934874, 5.731217, 7.670623, 
-                                42.01917, 9.558477, 22.85209, 
-                                36.94436, 113.7245, 52.11415, 1851.415),
-                cancer_LR = 11815.55) %>%
+                cancer_LR_s = c(6021.434, 10.847, 6.765517, 5.591547,
+                                40.25485, 9.967817, 21.31152, 41.72325, 
+                                114.1564, 57.3261, 3.893253),
+                cancer_LR = 8083.547) %>%
     mutate(cancer_A = cancer_LR_s / cancer_LR) %>%
     arrange(-cancer_A) %>%
     rowid_to_column("cancer_rank")
@@ -2007,8 +1774,8 @@ regTermTest(skincancer_mod_wt, ~ Orientation,
                    method = "LRT")
 regTermTest(skincancer_mod_wt, ~ Category,
                    method = "LRT")
-regTermTest(skincancer_mod_wt, ~ rcs(HealthLit, 5),
-                   method = "LRT")
+#regTermTest(skincancer_mod_wt, ~ rcs(HealthLit, 3),
+ #                  method = "LRT")
 regTermTest(skincancer_mod_wt, ~ Category:HealthLit,
                    method = "LRT")
 regTermTest(skincancer_mod_wt, ~ AnnIncome,
@@ -2024,11 +1791,11 @@ regTermTest(skincancer_mod_wt, ~ SeenPCP,
 skincancer_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                skincancer_LR_s = c(4562.085, 5.677088, 9.493959, 22.22419,
-                                    39.49814, 0.00014022, 14.8494, 
-                                    79.48138, 57.28921, 18.64233, 1273.812),
-                skincancer_LR = 7945.507) %>%
-    mutate(skincancer_A = skincancer_LR_s / skincancer_LR) %>%
+                skincancer_LR_s = c(4470.807, 5.111561, 6.985799, 20.30156,
+                                    37.6588, NA, 14.25056, 84.69232, 56.66745,
+                                    21.05558, 2.724872),
+                skincancer_LR = 5983.747) %>%
+    mutate(skincancer_A = ifelse(!is.na(skincancer_LR_s), skincancer_LR_s / skincancer_LR, NA)) %>%
     arrange(-skincancer_A) %>%
     rowid_to_column("skincancer_rank")
 skincancer_ai
@@ -2089,10 +1856,10 @@ regTermTest(lung_mod_wt, ~ SeenPCP,
 lung_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                lung_LR_s = c(79.82763, 7.812217, 6.062027, 88.2416,
-                              45.24548, 0.01649466, 28.68682, 
-                              155.9627, 86.33025, 166.6391, 3214.618),
-                lung_LR = 5871.691) %>%
+                lung_LR_s = c(81.63777, 7.665682, 7.790933, 91.82967, 
+                              46.43054, 0.6095791, 29.05269, 151.8001,
+                              89.97309, 172.1634, 60.2041),
+                lung_LR = 1200.327) %>%
     mutate(lung_A = lung_LR_s / lung_LR) %>%
     arrange(-lung_A) %>%
     rowid_to_column("lung_rank")
@@ -2137,8 +1904,8 @@ regTermTest(diab_mod_wt, ~ Orientation,
                    method = "LRT")
 regTermTest(diab_mod_wt, ~ Category,
                    method = "LRT")
-regTermTest(diab_mod_wt, ~ rcs(HealthLit, 5),
-                   method = "LRT")
+#regTermTest(diab_mod_wt, ~ rcs(HealthLit, 5),
+#                   method = "LRT")
 regTermTest(diab_mod_wt, ~ Category:HealthLit,
                    method = "LRT")
 regTermTest(diab_mod_wt, ~ AnnIncome,
@@ -2154,11 +1921,11 @@ regTermTest(diab_mod_wt, ~ SeenPCP,
 diab_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                diab_LR_s = c(1676.82, 4.222545, 10.77197, 8.039792, 
-                              24.36788, 0.03410694, 50.51483, 
-                              275.4606, 138.7056, 77.5465, 1427.503),
-                diab_LR = 5736.609) %>%
-    mutate(diab_A = diab_LR_s / diab_LR) %>%
+                diab_LR_s = c(1686.208, 3.370637, 10.45629, 9.118149,
+                              20.65728, NA, 45.40552, 280.5617, 140.7766,
+                              63.02119, 67.46988),
+                diab_LR = 2942.685) %>%
+    mutate(diab_A = ifelse(!is.na(diab_LR_s), diab_LR_s / diab_LR, NA)) %>%
     arrange(-diab_A) %>%
     rowid_to_column("diab_rank")
 diab_ai
@@ -2219,10 +1986,10 @@ regTermTest(obesity_mod_wt, ~ SeenPCP,
 obesity_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                obesity_LR_s = c(1351.889, 14.30626, 7.148299, 46.21695,
-                                 55.43028, 0.01671765, 59.69202, 
-                                 668.8949, 163.5817, 75.37221, 3047.508),
-                obesity_LR = 6434.681) %>%
+                obesity_LR_s = c(1343.172, 15.21484, 8.080671, 47.67528, 
+                                 48.82209, 0.5190116, 52.26723, 673.8664,
+                                 168.6344, 65.97265, 85.83793),
+                obesity_LR = 2527.367) %>%
     mutate(obesity_A = obesity_LR_s / obesity_LR) %>%
     arrange(-obesity_A) %>%
     rowid_to_column("obesity_rank")
@@ -2284,10 +2051,10 @@ regTermTest(ckd_mod_wt, ~ SeenPCP,
 ckd_ai <- tibble(Variable = c("Age", "Sex", "Gender", "Orientation",
                               "Race/Ethnicity", "Health Literacy", "Race/Ethnicity:Health Literacy",
                               "Income", "Education", "Insurance", "PCP"),
-                ckd_LR_s = c(276.4599, 8.249658, 24.02287, 4.489094,
-                             19.83719, 6.297869, 18.83068, 
-                             114.7761, 11.53398, 100.1868, 578.8346),
-                ckd_LR = 1859.223) %>%
+                ckd_LR_s = c(277.9644, 10.96518, 30.83123, 4.389937,
+                             18.72537, 5.673885, 17.6941, 112.0433, 
+                             11.53754, 108.5574, 9.652185),
+                ckd_LR = 984.0253) %>%
     mutate(ckd_A = ckd_LR_s / ckd_LR) %>%
     arrange(-ckd_A) %>%
     rowid_to_column("ckd_rank")
@@ -2311,26 +2078,38 @@ ai_fin %>%
     group_by(Variable) %>% summarise(MeanRank = mean(Rank)) %>%
     arrange(MeanRank)
 
-# make fig2 as heatmap
-ai_fin %>%
+ranks <- ai_fin %>%
     select(Variable, ends_with("rank")) %>%
     pivot_longer(!Variable, names_to = "Disease", values_to = "Rank") %>%
-    mutate(Disease = factor(Disease, levels = c("htn_rank",
-                                               "cad_rank",
-                                               "cancer_rank",
-                                               "skincancer_rank",
-                                               "lung_rank",
-                                               "diab_rank",
-                                               "obesity_rank",
-                                               "ckd_rank"),
+    mutate(Disease = str_remove(Disease, "_rank"))
+
+fill <- ai_fin %>%
+    select(Variable, ends_with("_A")) %>%
+    pivot_longer(!Variable, names_to = "Disease", values_to = "Fill") %>%
+    mutate(Disease = str_remove(Disease, "_A"))
+
+fig2 <- left_join(ranks, fill) %>%
+            mutate(density = Fill)
+fig2
+
+# make fig2 as heatmap
+fig2 %>%
+    mutate(Disease = factor(Disease, levels = c("htn",
+                                               "cad",
+                                               "cancer",
+                                               "skincancer",
+                                               "lung",
+                                               "diab",
+                                               "obesity",
+                                               "ckd"),
                            labels = c("Hypertension", "Coronary Artery Disease", "Any Cancer",
                                      "Skin Cancer", "Lung Disease",
                                      "Diabetes", "Obesity", "Chronic Kidney Disease")),
           terms = factor(Variable, levels = c("Age",
-                                          "PCP",
                                           "Income",
                                           "Education",
                                           "Insurance",
+                                          "PCP",
                                           "Race/Ethnicity",
                                           "Race/Ethnicity:Health Literacy",
                                           "Orientation",
@@ -2338,24 +2117,25 @@ ai_fin %>%
                                           "Gender",
                                           "Health Literacy"),
                         labels = c("Age",
-                                          "Primary Care Practitioner",
-                                          "Income",
-                                          "Education",
-                                          "Insurance",
-                                          "Race/Ethnicity",
-                                          "Race/Ethnicity:Health Literacy",
-                                          "Sexual Orientation",
-                                          "Sex",
-                                          "Gender",
-                                          "Health Literacy"))) %>%
+                                   "Income",
+                                   "Education",
+                                   "Insurance",
+                                   "Primary Care Practitioner",
+                                   "Race/Ethnicity",
+                                   "Race/Ethnicity:Health Literacy",
+                                   "Sexual Orientation",
+                                   "Sex",
+                                   "Gender",
+                                   "Health Literacy"))) %>%
     ggplot(aes(x = Disease, y = fct_rev(terms), fill = Rank, label = Rank)) +
-    geom_tile() +
-    geom_text(aes(color = factor(ifelse(Rank < 5, 1, 0))), fontface = "bold") +
+    geom_tile(aes(alpha = density)) +
+    geom_text(fontface = "bold") +
     ylab("") +
     xlab("") +
     ggtitle("") +
     scale_fill_viridis_c(direction = 1, limits = c(1, 11), guide = "none") +
-    scale_color_manual(values = c("black", "white"), guide = "none") +
+    scale_color_manual(values = c("black"), guide = "none") +
+    scale_alpha(guide = "none", na.value = 0) +
     theme_classic() +
     theme(text = element_text(family = "Arial", size = 12),
           axis.line = element_line(), 
